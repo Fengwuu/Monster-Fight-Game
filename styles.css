@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+/* Задання свого шрифту */
+html {
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+/* стилі верхньої частини сайту (Де написани призвіща) */
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 0.5rem;
+  background-color: #1144e9;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+section {
+  width: 90%;
+  max-width: 40rem;
+  margin: auto;
+}
+/* стилі для порожньої полоси здоров'я */
+.healthbar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #575757;
+  margin: 1rem 0;
+  background: #fde5e5;
+}
+/* стилі для полоси здоров'яб наповненої повністю/частково */
+.healthbar__value {
+  background-color: #00a876;
+  width: 100%;
+  height: 100%;
+}
+/* стилі для контейнерів для границі, тощо */
+.container {
+  text-align: center;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+}
+
+#monster h2,
+#player h2 {
+  margin: 0.25rem;
+}
+
+/* стилі для кнопок управління діями */
+#controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+/* Стилі для кнопок, відстань між ними, та їх положення у секції  */
+button {
+  font: inherit;
+  border: 1px solid #ff0505;
+  background-color: #ff0505;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+
+button:focus {
+  outline: none;
+}
+/* Стилі кнопки при наведенні курсору на неї */
+button:hover,
+button:active {
+  background-color: #b40707;
+  border-color: #b40707;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+}
+/* стилі для кнопок, які недоступні (вдарити сильно) */
+button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  box-shadow: none;
+  color: #3f3f3f;
+  cursor: not-allowed;
+}
+
+/* стилі списку журналу дій */
+#log ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Невеликий відступ у об'єктів журналу */
+#log li {
+  margin: 0.5rem 0;
+}
+
+/*  Наступні 4 частини коду потрібні для створення кольорового тексту у журналі дій */
+.log--player {
+  color: #dd0081;
+}
+
+.log--monster {
+  color: #00189e;
+}
+
+.log--damage {
+  color: red;
+}
+
+.log--heal {
+  color: green;
+}

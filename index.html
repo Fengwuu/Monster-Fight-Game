@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Назва сторінки вкладки -->
+    <title>ЛР1 та ЛР2</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Підключення зовнішнього файла стилів -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Підключення бібліотеки Vue.js для створення додатку -->
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <!-- Підключення зовнішнього JavaScript файлу для взаємодії з додатком -->
+    <script src="app.js" defer></script>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <h1>Пустовойтенко і Ніконенко АКАКТІТ-21-3</h1>
+      <h1></h1>
+    </header>
+    <div id="game">
+      <!-- Блок зі статистикою здоров'я чудовиська -->
+      <section id="monster" class="container">
+        <h2>Здоров'я чудовиська - {{monsterHealth}}</h2>
+        <div class="healthbar">
+          <div class="healthbar__value" :style="monsterHealthStyles"></div>
+        </div>
+      </section>
+      <!-- Блок зі статистикою здоров'я гравця -->
+      <section id="player" class="container">
+        <h2>Ваше здоров'я - {{playerHealth}}</h2>
+        <div class="healthbar">
+          <div class="healthbar__value" :style="playerHealthStyles"></div>
+        </div>
+      </section>
+      <!-- Блок, що відображається, коли гра закінчена -->
+      <section class="container" v-if="winner">
+        <h2>Game over!</h2>
+        <h3 v-if="winner === 'monster'">Ти програв!</h3>
+        <h3 v-if="winner === 'player'">Ти переміг!</h3>
+        <h3 v-if="winner === 'draw'">Нічия!</h3>
+        <button @click="startNewGame">Почати нову гру</button>
+      </section>
+      <!-- Керування діями персонажу -->
+      <section id="controls" v-if="!winner">
+        <button @click="playerAttack">Вдарити</button>
+        <button :disabled="isUltAble" @click="specialplayerAttack">
+          Вдарити сильно
+        </button>
+        <button @click="healPlayer">Лікуватися</button>
+        <button @click="surrender">Здатися</button>
+      </section>
+      <section id="log" class="container">
+        <!-- Секція з журналом бойових дій -->
+        <h2>Хід бойових дій:</h2>
+        <ul>
+          <li v-for="logMessage in logMessages">
+            <span
+              :class="{'log--player': logMessage.actionBy === 'player', 'log--monster': logMessage.actionBy === 'monster'}"
+              >{{logMessage.actionBy === 'player' ?
+              'Гравець':'Чудовисько'}}</span
+            >
+            <span v-if="logMessage.actionType ==='heal'">
+              лікує себе на
+              <span class="log--heal">{{logMessage.actionValue}}</span></span
+            >
+            <span v-else>
+              б'є, та наносить
+              <span class="log--damage">{{logMessage.actionValue}}</span>
+              урону</span
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
