@@ -15,7 +15,14 @@ In the first version, the project has only Ukrainian localization, since this pr
 In the future, the project will be translated into English and other languages.
 
 ## Screenshots
-![Game process](https://github.com/Fengwuu/Monster-Fight-Game/blob/master/game_process.jpg)
+<p align="center"><img src="https://github.com/Fengwuu/Monster-Fight-Game/blob/master/game_process.jpg" alt="alt text" width="1280" height="720"><br>
+  <em>Game process</em>
+</p></p>
+<br><br>
+<p align="center"><img src="https://github.com/Fengwuu/Monster-Fight-Game/blob/master/surrender.jpg" alt="alt text" width="1280" height="720"> <br>
+  <em>Surrender screenshot</em></p>
+
+<!-- ![Game process](https://github.com/Fengwuu/Monster-Fight-Game/blob/master/game_process.jpg ) -->
 
 
 ## Future updates
