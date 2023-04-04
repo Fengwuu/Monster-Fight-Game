@@ -14,6 +14,10 @@ which was mandatory on the development path towards full-stack development
 In the first version, the project has only Ukrainian localization, since this project is my implementation of work for the university.
 In the future, the project will be translated into English and other languages.
 
+## Screenshots
+![Game process](https://github.com/Fengwuu/Monster-Fight-Game/blob/master/game_process.jpg)
+
+
 ## Future updates
 - This project will likely receive updates as I progress as a front-end developer.
 It is also possible that the project will have a backend. 
